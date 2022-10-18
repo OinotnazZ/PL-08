@@ -5,17 +5,20 @@ import {defineStore} from "pinia";
 export const taskStore = defineStore ("task" ,{
     state: () => {
         return {
-            tasks: [],
+            tasks: [
+                {
+                    description: "Teste de vue",
+                    isCompleted: true,
+                    id: 1
+                }
+            ],
         };
     },
 
     actions: {
         addTask(task) {
-            const newTask = {
-                ...task,
-            };
 
-            this.tasks.push(newTask);
+            this.tasks.push(task)
 
             localStorage.setItem("task", JSON.stringify(this.tasks));
         },

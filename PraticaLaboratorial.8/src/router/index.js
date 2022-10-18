@@ -8,7 +8,7 @@ const routes = [
 
   { path: "/", component: TaskPainel },
   { path: "/form", component: FormTasks },
-  { path: "/taskeditdelete", component: TaskDetails },
+  { path: "/details/:id", component: TaskDetails },
 
 ];
 
