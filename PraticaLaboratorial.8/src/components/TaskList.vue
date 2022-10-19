@@ -1,10 +1,10 @@
 <template>
     <ul>
-        <TaskItem v-for="task in tasks" 
+        <TaskItem v-for="task in taskFilter" 
         :key="task.id" 
         :description="task.description"
         :isCompleted="task.isCompleted"
-        :click="() => task.handleClick(task.id)" 
+        :click="() => handleClick(task.id)" 
         />
     </ul>
 </template>
@@ -21,7 +21,7 @@ export default {
     },
 
     computed: {
-        ...mapState(taskStore, ["tasks"])
+        ...mapState(taskStore, ["taskFilter"])
     },
 
     methods: {
