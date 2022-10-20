@@ -1,11 +1,11 @@
 <template>
-    <ul>
-        <TaskItem v-for="task in taskFilter" 
-        :key="task.id" 
-        :task = "task"
-        :click="() => handleClick(task.id)" 
-        />
-    </ul>
+        <ul>
+            <TaskItem v-for="task in taskFilter" 
+            :key="task.id" 
+            :task = "task"
+            :click="() => handleClick(task.id)" 
+            />
+        </ul>
 </template>
 
 <script>

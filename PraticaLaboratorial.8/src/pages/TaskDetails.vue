@@ -1,18 +1,20 @@
 <template>
-    <div>
+    <div  class="flex justify-center mt-10">    
+    <div class="p-10 bg-black text-white rounded-md">
         {{task?.description}}
         <form @submit.prevent="handleSubmit">
-        <input type="text" name="description" :value="task?.description">
-        <div class="flex gap-3 w-full my-8">
+        <input class="mt-2 h-7 rounded-sm text-black" type="text" name="description" :value="task?.description">
+        <p>_______________________________________________________</p>
+        <div class="flex gap-3 w-full my-2 justify-start">
         <fieldset>
-          <legend>Completa?</legend>
-          <div>
+          <legend class="mb-1">Task Completed?</legend>
+          <div class="mb-2">
             <input
               type="radio"
               id="incompleted"
               name="isCompleted"
               value="incompleted"
-              class="mx-2"
+              class="mr-2"
               :checked="!task?.isCompleted"
             />
             <label for="incompleted">Incomplete</label>
@@ -23,17 +25,20 @@
               id="completed"
               name="isCompleted"
               value="completed"
-              class="mx-2"
+              class="mr-2"
               :checked="task?.isCompleted"
             />
             <label for="completed">Complete</label>
           </div>
+          <p>_______________________________________________________</p>
         </fieldset>
-      </div>
-      <Button :name="'Cancelar'" styles="third" @click="handleCancel" />
-      <Button :name="'Guardar'" styles="first" type="submit"/>
-      <Button :name="'Apagar'" styles="second" @click="() => deleteTask(task)"/>
-    </form>
+        </div>
+        <div class="flex justify-end gap-4">
+            <Button :class="'p-2 rounded-md'" :name="'Cancelar'" styles="third" @click="handleCancel" />
+            <Button :class="'p-2 rounded-md'" :name="'Guardar'" styles="first" type="submit"/>
+            <Button :class="'p-2 rounded-md'" :name="'Apagar'" styles="second" @click="() => deleteTask(task)"/></div>
+        </form>
+    </div>
     </div>
 </template>
 

@@ -1,16 +1,19 @@
 <template>
-    <form @submit.prevent="handleSubmit">
-    <input type="text" name="description">
-    <div class="flex gap-3 w-full my-8">
+  <div class="flex justify-center mt-10">
+    <form  class="bg-black text-white p-10 rounded-lg" @submit.prevent="handleSubmit">
+    <label>Insert Task Description: </label>
+    <input class="ml-4 h-7 rounded-sm text-black" type="text" name="description">
+    <p>_______________________________________________________</p>
+    <div class="flex gap-3 w-full my-10 justify-start">
         <fieldset>
-          <legend>Completa?</legend>
-          <div>
+          <legend class="mb-1">Task Completed?</legend>
+          <div class="mb-2">
             <input
               type="radio"
               id="incompleted"
               name="isCompleted"
               value="incompleted"
-              class="mx-2"
+              class="mr-2"
               checked
             />
             <label for="incompleted">Incomplete</label>
@@ -21,15 +24,19 @@
               id="completed"
               name="isCompleted"
               value="completed"
-              class="mx-2"
+              class="mr-2"
             />
             <label for="completed">Complete</label>
           </div>
+          <p>_______________________________________________________</p>
         </fieldset>
       </div>
-      <Button :name="'Cancelar'" styles="second" clickEvent="handleCancel" />
-      <Button :name="'Guardar'" styles="first" type="submit"/>
+      <div class="flex justify-end gap-4">
+        <Button :class="'p-2 rounded-md'" :name="'Cancel'" styles="second" clickEvent="handleCancel" />
+        <Button :class="'p-2 rounded-md'" :name="'Save'" styles="first" type="submit"/>
+      </div>
     </form>
+  </div>
 </template>
 
 <script>

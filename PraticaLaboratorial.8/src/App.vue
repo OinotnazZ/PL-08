@@ -1,6 +1,9 @@
 <template>
-  <h1 class="text-center font-semibold text-4xl mt-3">Prática Laboratorial 08</h1>
-<router-view></router-view>
+  <div class=" w-screen h-screen bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
+    <h1 class="text-center font-semibold text-4xl pt-10 text-white">Prática Laboratorial 08</h1>
+    <router-view></router-view>
+  </div>
+
 </template>
 
 <script>

@@ -1,10 +1,16 @@
 <template>
-    <div>
-        <Button :name="'Incomplete Tasks'" :styles="'first'" :clickEvent="taskNotCompletedFilter" />
-        <Button :name="'Complete Tasks'" :styles="'first'" :clickEvent="taskCompletedFilter" />
-        <Button :name="'Tasks'" :styles="'first'" :clickEvent="allTasks" />
-        <Button :name="'Create Task'" :styles="'first'" :clickEvent="createTaskLink" />
-        <TaskList />
+    <div class="flex justify-center mt-10">
+        <div class="p-10 bg-black text-white rounded-md">
+            <div class="flex gap-5">
+                <Button :class="'p-4 rounded-md'" :name="'Incompleted Tasks'" :styles="'first'" :clickEvent="taskNotCompletedFilter" />
+                <Button :class="'p-4 rounded-md'" :name="'Completed Tasks'" :styles="'first'" :clickEvent="taskCompletedFilter" />
+                <Button :class="'p-4 rounded-md'" :name="'All Tasks'" :styles="'first'" :clickEvent="allTasks" />
+                <Button :class="'p-4 rounded-md'" :name="'Create Task'" :styles="'first'" :clickEvent="createTaskLink" />
+            </div>
+            <div class="flex justify-center mt-5">
+                <TaskList />
+            </div>
+        </div>
     </div>
 </template>
 

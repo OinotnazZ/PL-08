@@ -1,8 +1,9 @@
 <template>
-    <li>
-    <input type="checkbox" @input="(e)=> taskChecked(e,task.id)">
-    <p :class="taskDone(task.isCompleted)">{{task.description ?? "" }}</p>
-    <Button :name="'Detalhe'" :styles="'first'" :clickEvent="click" />
+    <p>______________________________________________________________________________________</p>
+    <li class="flex gap-36 place-content-between">
+        <input type="checkbox" @input="(e)=> taskChecked(e,task.id)">
+        <p :class="taskDone(task.isCompleted)">{{task.description ?? "" }}</p>
+            <Button  :class="'p-2 rounded-md'" :name="'Details'" :styles="'first'" :clickEvent="click" />
     </li>
 </template>
 
