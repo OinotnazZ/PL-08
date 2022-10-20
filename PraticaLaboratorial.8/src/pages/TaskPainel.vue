@@ -1,9 +1,9 @@
 <template>
     <div>
-        <Button :name="'Tasks Por Concluir'" :styles="'first'" :clickEvent="taskNotCompletedFilter" />
-        <Button :name="'Tasks Completas'" :styles="'first'" :clickEvent="taskCompletedFilter" />
+        <Button :name="'Incomplete Tasks'" :styles="'first'" :clickEvent="taskNotCompletedFilter" />
+        <Button :name="'Complete Tasks'" :styles="'first'" :clickEvent="taskCompletedFilter" />
         <Button :name="'Tasks'" :styles="'first'" :clickEvent="allTasks" />
-        <Button :name="'Criar'" :styles="'first'" :clickEvent="createTaskLink" />
+        <Button :name="'Create Task'" :styles="'first'" :clickEvent="createTaskLink" />
         <TaskList />
     </div>
 </template>

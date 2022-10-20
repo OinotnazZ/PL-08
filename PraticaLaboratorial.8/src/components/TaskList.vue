@@ -2,8 +2,7 @@
     <ul>
         <TaskItem v-for="task in taskFilter" 
         :key="task.id" 
-        :description="task.description"
-        :isCompleted="task.isCompleted"
+        :task = "task"
         :click="() => handleClick(task.id)" 
         />
     </ul>

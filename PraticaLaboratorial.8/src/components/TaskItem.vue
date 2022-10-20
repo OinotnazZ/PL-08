@@ -1,12 +1,15 @@
 <template>
     <li>
-    <p :class="taskDone(isCompleted)">{{description ?? "" }}</p>
+    <input type="checkbox" @input="(e)=> taskChecked(e,task.id)">
+    <p :class="taskDone(task.isCompleted)">{{task.description ?? "" }}</p>
     <Button :name="'Detalhe'" :styles="'first'" :clickEvent="click" />
     </li>
 </template>
 
 
 <script>
+import { mapState, mapActions } from 'pinia';
+import { taskStore } from '../store/tasks'
 import Button from './Button.vue';
 
 export default {
@@ -15,9 +18,8 @@ export default {
     },
 
     props: {
-        description: String,
-        isCompleted: Boolean,
-        click: Function
+        task: Object,
+        click: Function,
     },
 
     methods: {
@@ -28,8 +30,35 @@ export default {
             else {
                 return "";
             }
-        }
+        },
+
+        taskChecked(e, taskId) {
+            const newTask = this.tasks.map((task) => {
+                if(task.id === taskId){
+                    return{
+                        ...task, 
+                        isCompleted: e.target.checked
+                    }
+                }
+
+                return {
+                    ...task
+                }
+            })
+
+            this.setTasks(newTask)
+
+            this.setTasksFilter(newTask)
+        },
+
+        ...mapActions(taskStore, ["setTasks", "setTasksFilter"])
     },
+    
+
+    computed: {
+        ...mapState(taskStore, ["tasks", "filterTask"])
+    }
+   
 }
 
 </script>

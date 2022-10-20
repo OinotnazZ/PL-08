@@ -17,6 +17,9 @@
         if(this.styles === "second") {
           return "bg-red-500 hover:bg-red-400 text-white"
         }
+        if(this.styles === "third") {
+          return "bg-yellow-500 hover:bg-yellow-400 text-white"
+        }
         else {
           return "bg-gray-500 hover:bg-gray-400 text-white"
         }

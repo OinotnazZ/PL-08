@@ -13,7 +13,7 @@
               class="mx-2"
               checked
             />
-            <label for="incompleted">incompleta</label>
+            <label for="incompleted">Incomplete</label>
           </div>
           <div>
             <input
@@ -23,7 +23,7 @@
               value="completed"
               class="mx-2"
             />
-            <label for="completed">Completa</label>
+            <label for="completed">Complete</label>
           </div>
         </fieldset>
       </div>
@@ -60,7 +60,7 @@ export default {
             const isCompleted = e.target.isCompleted.value
 
             if(!description){
-                alert('Erro, insira uma descrição')
+                alert('Error, insert a description')
                 return
             }
 

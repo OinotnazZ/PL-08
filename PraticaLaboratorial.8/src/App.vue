@@ -23,7 +23,7 @@ export default {
   },
 
   methods: {
-    ...mapActions(taskStore, ["setTasks", "setTasksFilter"])
+    ...mapActions(taskStore, ["setTasks", "setTasksFilter", "editTasks"])
   },
 }
 
